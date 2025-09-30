@@ -58,9 +58,9 @@ def submit_survey():
     append_json_line(record.dict())
 
     return jsonify({
-        "status": "success",
-        "data": submission.dict()
+        "status": "ok"
     }), 201
+
 
 
 if __name__ == "__main__":
