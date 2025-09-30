@@ -47,7 +47,7 @@ def submit_survey():
         ip=request.headers.get("X-Forwarded-For", request.remote_addr or "")
     )
 
-     # Generate submission_id if not provided
+    # Generate submission_id if not provided
     if not record.submission_id:
         timestamp = datetime.utcnow().strftime("%Y%m%d%H")
         # Use the email (already hashed in storage) + timestamp to create a stable id
@@ -62,9 +62,6 @@ def submit_survey():
     }), 201
 
 
-
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-
-
 
